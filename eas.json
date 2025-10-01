@@ -6,12 +6,10 @@
   "build": {
     "development": {
       "developmentClient": true,
-      "distribution": "internal",
-      "workingDirectory": "mobile-app"
+      "distribution": "internal"
     },
     "preview": {
       "distribution": "internal",
-      "workingDirectory": "mobile-app",
       "android": {
         "buildType": "apk",
         "credentialsSource": "remote",
@@ -20,7 +18,6 @@
     },
     "production": {
       "autoIncrement": true,
-      "workingDirectory": "mobile-app",
       "android": {
         "buildType": "apk",
         "credentialsSource": "remote"

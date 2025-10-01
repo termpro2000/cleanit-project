@@ -1,11 +1,16 @@
 {
   "name": "cleanit-project",
   "version": "1.0.0",
+  "main": "expo/AppEntry.js",
   "description": "청소 관리 플랫폼",
   "scripts": {
+    "start": "expo start",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "web": "expo start --web",
     "setup": "./scripts/setup.sh",
     "mobile": "cd mobile-app && npm start",
-    "web": "cd web-admin && npm start",
+    "web-admin": "cd web-admin && npm start",
     "firebase": "firebase serve",
     "deploy": "./scripts/deploy.sh"
   },

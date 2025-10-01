@@ -1,0 +1,29 @@
+{
+  "name": "cleanit-project",
+  "version": "1.0.0",
+  "description": "청소 관리 플랫폼",
+  "scripts": {
+    "setup": "./scripts/setup.sh",
+    "mobile": "cd mobile-app && npm start",
+    "web": "cd web-admin && npm start",
+    "firebase": "firebase serve",
+    "deploy": "./scripts/deploy.sh"
+  },
+  "keywords": [
+    "cleaning",
+    "management",
+    "react-native",
+    "firebase"
+  ],
+  "author": "CleanIT Team",
+  "license": "MIT",
+  "devDependencies": {
+    "firebase-admin": "^13.5.0",
+    "ts-node": "^10.9.2"
+  },
+  "dependencies": {
+    "expo": "^54.0.11",
+    "expo-constants": "^18.0.9",
+    "firebase": "^12.3.0"
+  }
+}

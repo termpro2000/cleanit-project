@@ -1,0 +1,20 @@
+# Netlify/Vercel Redirects Configuration
+
+# SPA fallback
+/*    /index.html   200
+
+# API redirects (if needed)
+/api/*  /.netlify/functions/:splat  200
+
+# Security redirects
+http://cleanit-9c968.netlify.app/*  https://cleanit-9c968.netlify.app/:splat  301!
+http://cleanit-9c968.web.app/*     https://cleanit-9c968.web.app/:splat     301!
+
+# Legacy route redirects (if any)
+/dashboard  /  301
+/admin      /  301
+
+# Handle old URLs
+/manager/*  /:splat  301
+/worker/*   /:splat  301
+/client/*   /:splat  301

@@ -1,0 +1,105 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 사용자 정보 접근 규칙
+    match /users/{userId} {
+      allow read, write: if request.auth != null && (
+        request.auth.uid == userId || 
+        getUserRole(request.auth.uid) in ['admin', 'manager']
+      );
+    }
+    
+    // 요청(requests) 접근 규칙
+    match /requests/{requestId} {
+      allow read: if request.auth != null && (
+        resource.data.requesterId == request.auth.uid ||
+        resource.data.assignedTo.adminId == request.auth.uid ||
+        resource.data.assignedTo.workerId == request.auth.uid ||
+        getUserRole(request.auth.uid) in ['admin', 'manager']
+      );
+      
+      allow create: if request.auth != null && (
+        getUserRole(request.auth.uid) == 'client' ||
+        getUserRole(request.auth.uid) == 'admin'
+      );
+      
+      allow update: if request.auth != null && (
+        resource.data.assignedTo.adminId == request.auth.uid ||
+        resource.data.assignedTo.workerId == request.auth.uid ||
+        getUserRole(request.auth.uid) in ['admin', 'manager']
+      );
+    }
+    
+    // 건물 정보 접근 규칙
+    match /buildings/{buildingId} {
+      allow read, write: if request.auth != null && (
+        resource.data.ownerId == request.auth.uid ||
+        getUserRole(request.auth.uid) in ['admin', 'manager']
+      );
+      allow create: if request.auth != null;
+    }
+    
+    // 작업(jobs) 접근 규칙
+    match /jobs/{jobId} {
+      allow read: if request.auth != null && (
+        resource.data.workerId == request.auth.uid ||
+        getBuildingOwner(resource.data.buildingId) == request.auth.uid ||
+        getUserRole(request.auth.uid) in ['admin', 'manager']
+      );
+      
+      allow create, update: if request.auth != null && (
+        getUserRole(request.auth.uid) in ['admin', 'manager'] ||
+        resource.data.workerId == request.auth.uid
+      );
+    }
+    
+    // 회사 정보 접근 규칙
+    match /companies/{companyId} {
+      allow read, write: if request.auth != null && (
+        resource.data.managerId == request.auth.uid ||
+        getUserRole(request.auth.uid) == 'admin'
+      );
+      allow create: if request.auth != null;
+    }
+    
+    // 대화(conversations) 및 메시지(messages) 접근 규칙
+    match /conversations/{conversationId} {
+      allow read, write: if request.auth != null && (
+        request.auth.uid in resource.data.participants ||
+        getUserRole(request.auth.uid) in ['admin', 'manager']
+      );
+      
+      match /messages/{messageId} {
+        allow read, write: if request.auth != null && (
+          request.auth.uid in get(/databases/$(database)/documents/conversations/$(conversationId)).data.participants ||
+          getUserRole(request.auth.uid) in ['admin', 'manager']
+        );
+      }
+    }
+    
+    // 리뷰 접근 규칙
+    match /reviews/{reviewId} {
+      allow read: if request.auth != null;
+      allow create, update: if request.auth != null && (
+        resource.data.reviewerId == request.auth.uid ||
+        getUserRole(request.auth.uid) in ['admin', 'manager']
+      );
+    }
+    
+    // 개발 환경 fallback: 위 규칙에 매치되지 않는 경우 임시 허용
+    match /{document=**} {
+      allow read, write: if request.auth != null;
+    }
+    
+    // 헬퍼 함수: 사용자 역할 조회
+    function getUserRole(userId) {
+      return get(/databases/$(database)/documents/users/$(userId)).data.role;
+    }
+    
+    // 헬퍼 함수: 건물 소유자 조회
+    function getBuildingOwner(buildingId) {
+      return get(/databases/$(database)/documents/buildings/$(buildingId)).data.ownerId;
+    }
+  }
+}

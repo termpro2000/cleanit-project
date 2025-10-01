@@ -1,0 +1,20 @@
+rules_version = "2";
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    // 개발 환경용: 모든 읽기/쓰기 허용
+    match /{allPaths=**} {
+      allow read, write: if true;
+    }
+    
+    // 작업 관련 사진 업로드 허용
+    match /public/jobs/{jobId}/{fileName} {
+      allow read, write: if true;
+    }
+    
+    // jobs 폴더의 모든 파일에 대한 접근 허용
+    match /jobs/{jobId}/{fileName} {
+      allow read, write: if true;
+    }
+  }
+}

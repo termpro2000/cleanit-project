@@ -1,0 +1,79 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Favicon - Option 4: Tech Style -->
+  <defs>
+    <!-- Tech gradient background -->
+    <radialGradient id="techFaviconGradient" cx="0.5" cy="0.5" r="0.7">
+      <stop offset="0%" style="stop-color:#2196F3;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#00BCD4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0F1419;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- Neon glow for favicon -->
+    <filter id="faviconGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="240" fill="url(#techFaviconGradient)"/>
+  
+  <!-- Tech border ring -->
+  <circle cx="256" cy="256" r="200" fill="none" stroke="#00E5FF" stroke-width="4" opacity="0.8" filter="url(#faviconGlow)"/>
+  <circle cx="256" cy="256" r="180" fill="none" stroke="#2196F3" stroke-width="2" opacity="0.6"/>
+  
+  <!-- Central geometric cleaning symbol -->
+  <g transform="translate(256, 256)">
+    
+    <!-- Central diamond/crystal shape -->
+    <polygon points="0,-60 40,0 0,60 -40,0" fill="#FFFFFF" opacity="0.95" filter="url(#faviconGlow)"/>
+    <polygon points="0,-50 30,0 0,50 -30,0" fill="#E3F2FD"/>
+    
+    <!-- Tech lines emanating from center (simplified for favicon) -->
+    <line x1="0" y1="-40" x2="0" y2="-80" stroke="#00E5FF" stroke-width="3" opacity="0.9" filter="url(#faviconGlow)"/>
+    <line x1="28" y1="-28" x2="57" y2="-57" stroke="#00E5FF" stroke-width="3" opacity="0.9" filter="url(#faviconGlow)"/>
+    <line x1="40" y1="0" x2="80" y2="0" stroke="#00E5FF" stroke-width="3" opacity="0.9" filter="url(#faviconGlow)"/>
+    <line x1="28" y1="28" x2="57" y2="57" stroke="#00E5FF" stroke-width="3" opacity="0.9" filter="url(#faviconGlow)"/>
+    <line x1="0" y1="40" x2="0" y2="80" stroke="#00E5FF" stroke-width="3" opacity="0.9" filter="url(#faviconGlow)"/>
+    <line x1="-28" y1="28" x2="-57" y2="57" stroke="#00E5FF" stroke-width="3" opacity="0.9" filter="url(#faviconGlow)"/>
+    <line x1="-40" y1="0" x2="-80" y2="0" stroke="#00E5FF" stroke-width="3" opacity="0.9" filter="url(#faviconGlow)"/>
+    <line x1="-28" y1="-28" x2="-57" y2="-57" stroke="#00E5FF" stroke-width="3" opacity="0.9" filter="url(#faviconGlow)"/>
+    
+    <!-- Central cleaning tools (stylized) -->
+    <rect x="-3" y="-20" width="6" height="40" rx="3" fill="#2196F3" opacity="0.9"/>
+    <circle cx="0" cy="-15" r="6" fill="#00E5FF" opacity="0.8" filter="url(#faviconGlow)"/>
+    <circle cx="0" cy="15" r="6" fill="#00E5FF" opacity="0.8" filter="url(#faviconGlow)"/>
+    
+    <!-- Single quality indicator for simplicity -->
+    <g transform="translate(0, -100)">
+      <rect x="-15" y="-6" width="30" height="12" rx="6" fill="#4CAF50" opacity="0.9" filter="url(#faviconGlow)"/>
+      <circle cx="-7" cy="0" r="3" fill="#8BC34A"/>
+      <circle cx="0" cy="0" r="3" fill="#8BC34A"/>
+      <circle cx="7" cy="0" r="3" fill="#8BC34A"/>
+    </g>
+  </g>
+  
+  <!-- Corner tech indicators (simplified for favicon) -->
+  <g transform="translate(100, 100)">
+    <polygon points="0,0 15,0 15,15" fill="none" stroke="#00E5FF" stroke-width="2" opacity="0.6"/>
+    <circle cx="4" cy="4" r="2" fill="#00E5FF" opacity="0.8"/>
+  </g>
+  
+  <g transform="translate(412, 100) rotate(90)">
+    <polygon points="0,0 15,0 15,15" fill="none" stroke="#00E5FF" stroke-width="2" opacity="0.6"/>
+    <circle cx="4" cy="4" r="2" fill="#00E5FF" opacity="0.8"/>
+  </g>
+  
+  <g transform="translate(100, 412) rotate(-90)">
+    <polygon points="0,0 15,0 15,15" fill="none" stroke="#00E5FF" stroke-width="2" opacity="0.6"/>
+    <circle cx="4" cy="4" r="2" fill="#00E5FF" opacity="0.8"/>
+  </g>
+  
+  <g transform="translate(412, 412) rotate(180)">
+    <polygon points="0,0 15,0 15,15" fill="none" stroke="#00E5FF" stroke-width="2" opacity="0.6"/>
+    <circle cx="4" cy="4" r="2" fill="#00E5FF" opacity="0.8"/>
+  </g>
+</svg>

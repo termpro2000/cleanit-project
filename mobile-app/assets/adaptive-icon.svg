@@ -1,0 +1,119 @@
+<svg width="432" height="432" viewBox="0 0 432 432" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Android Adaptive Icon - Option 4: Tech Cleaning -->
+  <defs>
+    <!-- Neon glow effects -->
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="outerGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Safe zone: 108dp, content should be within 162dp circle from center (216, 216) -->
+  
+  <!-- Central geometric cleaning symbol -->
+  <g transform="translate(216, 216)">
+    
+    <!-- Outer tech ring -->
+    <circle cx="0" cy="0" r="70" fill="none" stroke="#00E5FF" stroke-width="3" opacity="0.8" filter="url(#neonGlow)"/>
+    <circle cx="0" cy="0" r="60" fill="none" stroke="#2196F3" stroke-width="1.5" opacity="0.6"/>
+    
+    <!-- Central diamond/crystal shape -->
+    <polygon points="0,-35 25,0 0,35 -25,0" fill="#FFFFFF" opacity="0.95" filter="url(#outerGlow)"/>
+    <polygon points="0,-30 20,0 0,30 -20,0" fill="#E3F2FD"/>
+    
+    <!-- Tech lines emanating from center -->
+    <line x1="0" y1="-25" x2="0" y2="-50" stroke="#00E5FF" stroke-width="2" opacity="0.9" filter="url(#neonGlow)"/>
+    <line x1="18" y1="-18" x2="35" y2="-35" stroke="#00E5FF" stroke-width="2" opacity="0.9" filter="url(#neonGlow)"/>
+    <line x1="25" y1="0" x2="50" y2="0" stroke="#00E5FF" stroke-width="2" opacity="0.9" filter="url(#neonGlow)"/>
+    <line x1="18" y1="18" x2="35" y2="35" stroke="#00E5FF" stroke-width="2" opacity="0.9" filter="url(#neonGlow)"/>
+    <line x1="0" y1="25" x2="0" y2="50" stroke="#00E5FF" stroke-width="2" opacity="0.9" filter="url(#neonGlow)"/>
+    <line x1="-18" y1="18" x2="-35" y2="35" stroke="#00E5FF" stroke-width="2" opacity="0.9" filter="url(#neonGlow)"/>
+    <line x1="-25" y1="0" x2="-50" y2="0" stroke="#00E5FF" stroke-width="2" opacity="0.9" filter="url(#neonGlow)"/>
+    <line x1="-18" y1="-18" x2="-35" y2="-35" stroke="#00E5FF" stroke-width="2" opacity="0.9" filter="url(#neonGlow)"/>
+    
+    <!-- Central cleaning tools (stylized) -->
+    <rect x="-2" y="-15" width="4" height="30" rx="2" fill="#2196F3" opacity="0.9"/>
+    <circle cx="0" cy="-12" r="4" fill="#00E5FF" opacity="0.8" filter="url(#neonGlow)"/>
+    <circle cx="0" cy="12" r="4" fill="#00E5FF" opacity="0.8" filter="url(#neonGlow)"/>
+    
+    <!-- Digital spray pattern -->
+    <g opacity="0.7">
+      <circle cx="-12" cy="-8" r="1.5" fill="#00E5FF" filter="url(#neonGlow)"/>
+      <circle cx="12" cy="-5" r="1" fill="#00E5FF" filter="url(#neonGlow)"/>
+      <circle cx="-10" cy="10" r="1.2" fill="#00E5FF" filter="url(#neonGlow)"/>
+      <circle cx="15" cy="8" r="0.8" fill="#00E5FF" filter="url(#neonGlow)"/>
+    </g>
+    
+    <!-- Quality indicators (compact) -->
+    <!-- Top indicator -->
+    <g transform="translate(0, -55)">
+      <rect x="-8" y="-3" width="16" height="6" rx="3" fill="#4CAF50" opacity="0.9" filter="url(#outerGlow)"/>
+      <circle cx="-4" cy="0" r="1.5" fill="#8BC34A"/>
+      <circle cx="0" cy="0" r="1.5" fill="#8BC34A"/>
+      <circle cx="4" cy="0" r="1.5" fill="#8BC34A"/>
+    </g>
+    
+    <!-- Side indicators -->
+    <g transform="translate(-55, 0) rotate(-45)">
+      <rect x="-6" y="-2" width="12" height="4" rx="2" fill="#FF9800" opacity="0.9" filter="url(#outerGlow)"/>
+      <polygon points="-3,1.5 -3,-1.5 0,0" fill="#FFB74D"/>
+      <polygon points="0,1.5 0,-1.5 3,0" fill="#FFB74D"/>
+    </g>
+    
+    <g transform="translate(55, 0) rotate(45)">
+      <rect x="-6" y="-2" width="12" height="4" rx="2" fill="#9C27B0" opacity="0.9" filter="url(#outerGlow)"/>
+      <rect x="-3" y="-1.5" width="2" height="3" rx="1" fill="#BA68C8"/>
+      <rect x="1" y="-1.5" width="2" height="3" rx="1" fill="#BA68C8"/>
+    </g>
+  </g>
+  
+  <!-- Corner tech elements (smaller for safe zone) -->
+  <!-- Top-left -->
+  <g transform="translate(130, 130)">
+    <polygon points="0,0 8,0 8,8" fill="none" stroke="#00E5FF" stroke-width="1.5" opacity="0.6"/>
+    <circle cx="2" cy="2" r="1" fill="#00E5FF" opacity="0.8"/>
+  </g>
+  
+  <!-- Top-right -->
+  <g transform="translate(302, 130) rotate(90)">
+    <polygon points="0,0 8,0 8,8" fill="none" stroke="#00E5FF" stroke-width="1.5" opacity="0.6"/>
+    <circle cx="2" cy="2" r="1" fill="#00E5FF" opacity="0.8"/>
+  </g>
+  
+  <!-- Bottom-left -->
+  <g transform="translate(130, 302) rotate(-90)">
+    <polygon points="0,0 8,0 8,8" fill="none" stroke="#00E5FF" stroke-width="1.5" opacity="0.6"/>
+    <circle cx="2" cy="2" r="1" fill="#00E5FF" opacity="0.8"/>
+  </g>
+  
+  <!-- Bottom-right -->
+  <g transform="translate(302, 302) rotate(180)">
+    <polygon points="0,0 8,0 8,8" fill="none" stroke="#00E5FF" stroke-width="1.5" opacity="0.6"/>
+    <circle cx="2" cy="2" r="1" fill="#00E5FF" opacity="0.8"/>
+  </g>
+  
+  <!-- Floating data particles -->
+  <g opacity="0.6">
+    <rect x="150" y="170" width="2" height="2" fill="#00E5FF" filter="url(#neonGlow)"/>
+    <rect x="170" y="160" width="1.5" height="1.5" fill="#2196F3" filter="url(#neonGlow)"/>
+    <rect x="140" y="180" width="1" height="1" fill="#00E5FF" filter="url(#neonGlow)"/>
+    
+    <rect x="280" y="200" width="2" height="2" fill="#00E5FF" filter="url(#neonGlow)"/>
+    <rect x="260" y="220" width="1.5" height="1.5" fill="#2196F3" filter="url(#neonGlow)"/>
+    <rect x="290" y="190" width="1" height="1" fill="#00E5FF" filter="url(#neonGlow)"/>
+    
+    <rect x="170" y="280" width="1.5" height="1.5" fill="#00E5FF" filter="url(#neonGlow)"/>
+    <rect x="250" y="290" width="2" height="2" fill="#2196F3" filter="url(#neonGlow)"/>
+  </g>
+</svg>

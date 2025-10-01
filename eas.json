@@ -13,14 +13,16 @@
       "android": {
         "buildType": "apk",
         "credentialsSource": "remote",
-        "autoSubmit": false
+        "autoSubmit": false,
+        "googleServicesFile": false
       }
     },
     "production": {
       "autoIncrement": true,
       "android": {
         "buildType": "apk",
-        "credentialsSource": "remote"
+        "credentialsSource": "remote",
+        "googleServicesFile": false
       }
     }
   },
